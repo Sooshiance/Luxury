@@ -9,7 +9,6 @@ class Category(models.Model):
     title       = models.CharField(max_length=255, unique=True)
     description = models.TextField()
     thumbnail   = models.ImageField(upload_to='category/')
-    active      = models.BooleanField(default=True)
     created_at  = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -31,7 +30,6 @@ class Product(models.Model):
     old_price       = models.DecimalField(max_digits=12, decimal_places=2)
     barcode         = models.CharField(max_length=15, validators=[numbers])
     shipping_amount = models.DecimalField(max_digits=12, decimal_places=2)
-    active          = models.BooleanField(default=True)
     created_at      = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -54,7 +52,6 @@ class Gallery(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     title   = models.CharField(max_length = 256)
     img     = models.ImageField(upload_to='gallery/')
-    active  = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
@@ -70,7 +67,6 @@ class Feature(models.Model):
     product     = models.ForeignKey(Product, on_delete=models.CASCADE)
     title       = models.CharField(max_length = 256)
     description = models.TextField()
-    active      = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
