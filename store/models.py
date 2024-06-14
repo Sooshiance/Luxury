@@ -30,7 +30,6 @@ class Product(models.Model):
     price           = models.DecimalField(max_digits=12, decimal_places=2)
     old_price       = models.DecimalField(max_digits=12, decimal_places=2)
     barcode         = models.CharField(max_length=15, validators=[numbers])
-    shipping_amount = models.DecimalField(max_digits=12, decimal_places=2)
     active          = models.BooleanField(default=True)
     created_at      = models.DateField(auto_now_add=True)
 
