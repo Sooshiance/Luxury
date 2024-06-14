@@ -71,7 +71,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     email        = models.EmailField(verbose_name='پست الکترونیکی', unique=True, max_length=244, help_text='این فیلد الزامی میباشد')
     first_name   = models.CharField(max_length=30, null=True, blank=True, verbose_name='نام', help_text='این فیلد الزامی میباشد')
     last_name    = models.CharField(max_length=50, null=True, blank=True, verbose_name='نام خانوادگی', help_text='این فیلد الزامی میباشد')
-    is_active    = models.BooleanField(default=False, null=False, verbose_name='وضعیت فعالیت')
+    is_active    = models.BooleanField(default=True, null=False, verbose_name='وضعیت فعالیت')
     is_staff     = models.BooleanField(default=False, null=False, verbose_name='دسترسی ادمین')
     is_superuser = models.BooleanField(default=False, null=False, verbose_name='مدیر')
 
