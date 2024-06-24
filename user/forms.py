@@ -24,11 +24,11 @@ class OTPForm(forms.Form):
 
 
 class UserUpdate(forms.Form):
-    phone = forms.CharField(label="Phone Number")
-    email = forms.EmailField(label="Email")
-    username = forms.CharField(label="Username")
+    phone      = forms.CharField(label="Phone Number")
+    email      = forms.EmailField(label="Email")
+    username   = forms.CharField(label="Username")
     first_name = forms.CharField(label="Name")
-    last_name = forms.CharField(label="Family Name")
+    last_name  = forms.CharField(label="Family Name")
     
     def __init__(self, *args, **kwargs):
         super(UserUpdate, self).__init__(*args, **kwargs)
